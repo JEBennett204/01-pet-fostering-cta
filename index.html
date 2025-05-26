@@ -24,13 +24,13 @@
     </section>
 
     <section class="pet-photo">
-      <img src="img/2024-01-04_12-24-48_845.jpg" alt="A colorful cat representing a happy foster pet" style="width:100%; max-width:340px; display:block; margin:0 auto; border-radius:16px; border: 4px solid #2196f3; background:#fff;">
-      <p style="text-align:center; color:#0097a7; font-weight:bold; margin-top:10px;">Every pet deserves a loving home!</p>
+      <img src="img/2024-01-04_12-24-48_845.jpg" alt="A colorful cat representing a happy foster pet">
+      <p>Every pet deserves a loving home!</p>
     </section>
 
     <section class="info-columns">
       <section class="info-image">
-        <img src="img/gato i perro .jpg" alt="A happy foster dog and cat" style="width:100%; border-radius:8px;">
+        <img src="img/gato i perro .jpg" alt="A happy foster dog and cat">
       </section>
       <section class="info-text">
         <h2>Fostering Makes a Difference</h2>
@@ -53,7 +53,7 @@
     </main>
   </section>
 
-  <section id="how-to-foster-section" style="display:none; max-width:700px; margin:36px auto; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(33,150,243,0.10); padding:20px;">
+  <section id="how-to-foster-section">
     <h2>How to Foster a Pet (Step by Step)</h2>
     <ol>
       <li><strong>Contact a local shelter or rescue group.</strong> Ask about their fostering program and fill out an application.</li>
@@ -63,24 +63,18 @@
       <li><strong>Share updates.</strong> Take photos and share information with the shelter to help your foster pet get adopted.</li>
       <li><strong>Help with adoption.</strong> Meet potential adopters and help your foster pet find their forever home!</li>
     </ol>
-    <p style="font-size:0.95em; color:#1a3a4f;">For more tips, visit <a href="https://www.wikihow.com/Foster-a-Dog-or-Cat" target="_blank" rel="noopener">this WikiHow guide</a>.</p>
+    <p class="howto-link">For more tips, visit <a href="https://www.wikihow.com/Foster-a-Dog-or-Cat" target="_blank" rel="noopener">this WikiHow guide</a>.</p>
   </section>
 
-  <section id="map-section" class="local-map" style="display:none;">
+  <section id="map-section" class="local-map">
     <h2>Find Pet Adoption Centers Near You</h2>
     <p>See where you can adopt or foster a pet in your area!</p>
     <iframe
       id="adoptionMap"
       src="https://www.google.com/maps?q=pet+adoption&output=embed"
-      width="100%"
-      height="300"
-      style="border:0; border-radius:8px; display:block; margin:0 auto;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
       title="Pet Adoption Centers Near You"
     ></iframe>
-    <p id="locationMessage" style="color:#1a3a4f; font-size:0.95em;"></p>
+    <p id="locationMessage"></p>
     <script>
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -98,10 +92,10 @@
     </script>
   </section>
 
-  <section id="about-me-section" style="display:none; max-width:700px; margin:36px auto; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(33,150,243,0.10); padding:20px;">
+  <section id="about-me-section">
     <h2>About Me</h2>
     <p>Hello! I'm the creator of this pet fostering site. Learn more about me and see my profile card here:</p>
-    <p><a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" rel="noopener" style="color:#2196f3; font-weight:bold;">View My Profile Card</a></p>
+    <p><a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" rel="noopener" class="profile-link">View My Profile Card</a></p>
   </section>
 
   <footer>

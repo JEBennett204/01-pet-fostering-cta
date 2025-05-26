@@ -224,36 +224,53 @@ footer {
   width: 100%;
   height: 300px;
   border: 0;
-  border-radius: 12px;
-  margin-top: 14px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Style for the pet-photo section */
+/* Style for the pet-photo section and image */
 .pet-photo {
   max-width: 380px;
   margin: 28px auto 36px auto;
   padding: 18px 12px 12px 12px;
-  background: #e3f2fd; /* Light blue background for color */
+  background: #e3f2fd;
   border-radius: 20px;
   box-shadow: 0 2px 10px rgba(33,150,243,0.12);
   text-align: center;
 }
-
 .pet-photo img {
   width: 100%;
   max-width: 340px;
-  border-radius: 18px;
+  border-radius: 16px;
   border: 4px solid #2196f3;
   background: #fff;
   display: block;
   margin: 0 auto;
 }
-
 .pet-photo p {
+  text-align: center;
   color: #0097a7;
   font-weight: bold;
-  margin-top: 12px;
-  font-size: 1.15em;
+  margin-top: 10px;
+}
+
+/* Style for info-columns images */
+.info-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Style for how-to-foster section link */
+.howto-link {
+  font-size: 0.95em;
+  color: #1a3a4f;
+}
+
+/* Style for about-me profile link */
+.profile-link {
+  color: #2196f3;
+  font-weight: bold;
 }
 
 /* Navigation bar styles */
