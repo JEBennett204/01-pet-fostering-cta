@@ -1,0 +1,285 @@
+/* Set a modern, easy-to-read font and background color for the whole page */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #e6f7fa;
+  color: #1a3a4f;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7; /* Improve readability */
+}
+
+/* Style the main header section (not the site name) */
+header {
+  background-color: #2196f3; /* Blue background for header */
+  color: #ffffff; /* White text in header */
+  padding: 24px 0; /* Space above and below header content */
+  text-align: center; /* Center the header text */
+}
+
+header h1 {
+  margin: 0 0 8px 0; /* Remove top margin, add space below */
+  font-size: 2.2em; /* Make the header text large */
+}
+
+header p {
+  margin: 0; /* Remove default margin */
+  font-size: 1.1em; /* Slightly larger text for header description */
+}
+
+/* Style the site name header at the very top */
+.site-header {
+  background-color: #2196f3; /* Blue background to match banner */
+  color: #fff; /* White text */
+  text-align: center; /* Center the site name */
+  padding: 24px 0; /* More padding for modern look */
+  font-family: 'Segoe UI', Arial, sans-serif; /* Use the same modern font */
+  font-size: 1.7em; /* Slightly larger text */
+  letter-spacing: 1.5px; /* Add space between letters */
+  margin-bottom: 0; /* Remove bottom margin */
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10); /* Subtle shadow */
+}
+
+.site-header h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 2.2em; /* Set site name size */
+  letter-spacing: 2px;
+}
+
+/* Style the main content area */
+main {
+  max-width: 700px;
+  margin: 36px auto;
+  padding: 24px;
+  background-color: #ffffff; /* White background for content */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.12);
+}
+
+/* Add space below each section */
+section {
+  margin-bottom: 36px;
+}
+
+/* Style all h2 headings */
+h2 {
+  color: #0097a7; /* Teal color for headings */
+  margin-top: 0; /* Remove top margin */
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+/* Style the call-to-action button */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #0097a7 0%, #2196f3 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 16px 36px;
+  font-size: 1.1em;
+  border-radius: 32px;
+  cursor: pointer;
+  margin-top: 12px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #2196f3 0%, #0097a7 100%);
+  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
+}
+
+/* Style the footer at the bottom of the page */
+footer {
+  background-color: #1a3a4f; /* Dark blue background for footer */
+  color: #ffffff; /* White text in footer */
+  text-align: center; /* Center the footer text */
+  padding: 20px 0;
+  margin-top: 44px; /* Space above footer */
+  font-size: 1em;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -2px 8px rgba(33, 150, 243, 0.08);
+}
+
+/* Style the banner section with a background image and overlay */
+.banner {
+  background-image: url('img/cta-bg.jpg'); /* Set the banner background image */
+  background-size: cover; /* Make image cover the whole banner */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  position: relative; /* Needed for overlay effect */
+  padding: 60px 0 52px 0;
+  text-align: center; /* Center the banner text */
+  color: #1a3a4f; /* Dark blue text for contrast */
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 18px;
+}
+
+/* Add a simple white overlay to the banner for readability */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.78); /* White with some transparency */
+  z-index: 1;
+}
+
+.banner h1,
+.banner p {
+  position: relative;
+  z-index: 2;
+  font-weight: bold; /* Make text bold for readability */
+  text-shadow: 1px 1px 4px #fff, 0 0 2px #1a3a4f; /* Add a light and dark shadow for contrast */
+}
+
+.banner h1 {
+  margin: 0 0 14px 0; /* Remove top margin, add space below */
+  font-size: 2.7em; /* Large banner heading */
+}
+
+.banner p {
+  margin: 0; /* Remove default margin */
+  font-size: 1.25em; /* Slightly larger text */
+}
+
+/* Two column layout for info section below the banner */
+.info-columns {
+  max-width: 700px;
+  margin: 36px auto;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.12);
+  padding: 24px;
+}
+
+.info-image {
+  float: left; /* Place image on the left */
+  width: 48%; /* Take up almost half the space */
+  margin-right: 4%; /* Space between image and text */
+}
+
+.info-text {
+  float: left; /* Place text next to image */
+  width: 48%; /* Take up almost half the space */
+}
+
+/* Make columns stack on small screens (like phones) */
+@media (max-width: 800px) {
+  main, .info-columns, .local-map {
+    max-width: 98%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-image, .info-text {
+    float: none; /* Remove float on small screens */
+    width: 100%; /* Full width for each column */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 18px; /* Space below each column */
+  }
+  .banner h1 {
+    font-size: 1.6em;
+  }
+  .banner p {
+    font-size: 1.05em;
+  }
+  .cta-button {
+    width: 100%;
+    font-size: 1em;
+    padding: 14px 0;
+  }
+  .pet-photo {
+    max-width: 98%;
+    padding: 10px 2px 2px 2px;
+  }
+  .pet-photo img {
+    max-width: 98%;
+  }
+}
+
+/* Style for the local map section */
+.local-map {
+  max-width: 700px;
+  margin: 36px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.12);
+  text-align: center;
+}
+
+.local-map h2 {
+  color: #0097a7;
+  margin-top: 0;
+}
+
+.local-map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 14px;
+}
+
+/* Style for the pet-photo section */
+.pet-photo {
+  max-width: 380px;
+  margin: 28px auto 36px auto;
+  padding: 18px 12px 12px 12px;
+  background: #e3f2fd; /* Light blue background for color */
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(33,150,243,0.12);
+  text-align: center;
+}
+
+.pet-photo img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 18px;
+  border: 4px solid #2196f3;
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+.pet-photo p {
+  color: #0097a7;
+  font-weight: bold;
+  margin-top: 12px;
+  font-size: 1.15em;
+}
+
+/* Navigation bar styles */
+.main-nav {
+  width: 100%;
+  background: #e3f2fd;
+  text-align: center;
+  padding: 14px 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid #2196f3;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.06);
+}
+
+.main-nav a {
+  color: #1a3a4f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.15em;
+  padding: 10px 28px;
+  border-radius: 22px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.main-nav a.active, .main-nav a:hover {
+  background: #2196f3;
+  color: #fff;
+}

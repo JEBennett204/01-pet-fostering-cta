@@ -6,6 +6,152 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Content goes here -->
+  <header class="site-header">
+    <h1>PetQuest</h1>
+  </header>
+
+  <nav class="main-nav">
+    <a href="#home" id="homeTab" class="active">Home</a>
+    <a href="#how-to-foster" id="howTab">How to Foster</a>
+    <a href="#map" id="mapTab">Map</a>
+    <a href="#about-me" id="aboutTab">About Me</a>
+  </nav>
+
+  <section id="home-section">
+    <section class="banner">
+      <h1>Welcome to Pet Fostering</h1>
+      <p>Our mission is to help pets find loving temporary homes until they are adopted.</p>
+    </section>
+
+    <section class="pet-photo">
+      <img src="img/2024-01-04_12-24-48_845.jpg" alt="A colorful cat representing a happy foster pet" style="width:100%; max-width:340px; display:block; margin:0 auto; border-radius:16px; border: 4px solid #2196f3; background:#fff;">
+      <p style="text-align:center; color:#0097a7; font-weight:bold; margin-top:10px;">Every pet deserves a loving home!</p>
+    </section>
+
+    <section class="info-columns">
+      <section class="info-image">
+        <img src="img/gato i perro .jpg" alt="A happy foster dog and cat" style="width:100%; border-radius:8px;">
+      </section>
+      <section class="info-text">
+        <h2>Fostering Makes a Difference</h2>
+        <p>When you foster a pet, you give them a safe and loving place to stay while they wait for adoption. Fostering helps pets adjust to home life and increases their chances of finding a forever family.</p>
+      </section>
+    </section>
+
+    <main>
+      <section>
+        <h2>Why Foster a Pet?</h2>
+        <p>Fostering gives pets a safe place to stay and helps them get ready for their forever families.</p>
+      </section>
+
+      <section>
+        <h2>How You Can Help</h2>
+        <p>You can become a foster parent and make a big difference in a pet's life. It's easy to get started!</p>
+        <p><strong>Ready to help?</strong></p>
+        <a href="#how-to-foster" class="cta-button" id="howTabBtn">Learn How to Foster</a>
+      </section>
+    </main>
+  </section>
+
+  <section id="how-to-foster-section" style="display:none; max-width:700px; margin:36px auto; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(33,150,243,0.10); padding:20px;">
+    <h2>How to Foster a Pet (Step by Step)</h2>
+    <ol>
+      <li><strong>Contact a local shelter or rescue group.</strong> Ask about their fostering program and fill out an application.</li>
+      <li><strong>Prepare your home.</strong> Make a safe, comfortable space for your foster pet with food, water, and a cozy bed.</li>
+      <li><strong>Pick up your foster pet.</strong> Meet your new furry friend and bring them home.</li>
+      <li><strong>Care for your foster pet.</strong> Give them love, food, playtime, and any medicine they need. Help them feel safe and happy.</li>
+      <li><strong>Share updates.</strong> Take photos and share information with the shelter to help your foster pet get adopted.</li>
+      <li><strong>Help with adoption.</strong> Meet potential adopters and help your foster pet find their forever home!</li>
+    </ol>
+    <p style="font-size:0.95em; color:#1a3a4f;">For more tips, visit <a href="https://www.wikihow.com/Foster-a-Dog-or-Cat" target="_blank" rel="noopener">this WikiHow guide</a>.</p>
+  </section>
+
+  <section id="map-section" class="local-map" style="display:none;">
+    <h2>Find Pet Adoption Centers Near You</h2>
+    <p>See where you can adopt or foster a pet in your area!</p>
+    <iframe
+      id="adoptionMap"
+      src="https://www.google.com/maps?q=pet+adoption&output=embed"
+      width="100%"
+      height="300"
+      style="border:0; border-radius:8px; display:block; margin:0 auto;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Pet Adoption Centers Near You"
+    ></iframe>
+    <p id="locationMessage" style="color:#1a3a4f; font-size:0.95em;"></p>
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude;
+          var lon = position.coords.longitude;
+          var map = document.getElementById('adoptionMap');
+          map.src = 'https://www.google.com/maps?q=pet+adoption+near+' + lat + ',' + lon + '&output=embed';
+          document.getElementById('locationMessage').textContent = "Showing results near your current location.";
+        }, function() {
+          document.getElementById('locationMessage').textContent = "Location access denied. Showing general results.";
+        });
+      } else {
+        document.getElementById('locationMessage').textContent = "Geolocation is not supported by your browser. Showing general results.";
+      }
+    </script>
+  </section>
+
+  <section id="about-me-section" style="display:none; max-width:700px; margin:36px auto; background:#fff; border-radius:14px; box-shadow:0 4px 16px rgba(33,150,243,0.10); padding:20px;">
+    <h2>About Me</h2>
+    <p>Hello! I'm the creator of this pet fostering site. Learn more about me and see my profile card here:</p>
+    <p><a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" rel="noopener" style="color:#2196f3; font-weight:bold;">View My Profile Card</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pet Fostering. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple tab functionality for beginners
+    var homeTab = document.getElementById('homeTab');
+    var howTab = document.getElementById('howTab');
+    var mapTab = document.getElementById('mapTab');
+    var aboutTab = document.getElementById('aboutTab');
+    var homeSection = document.getElementById('home-section');
+    var howSection = document.getElementById('how-to-foster-section');
+    var mapSection = document.getElementById('map-section');
+    var aboutSection = document.getElementById('about-me-section');
+    var howTabBtn = document.getElementById('howTabBtn');
+
+    function showTab(tab) {
+      homeTab.classList.remove('active');
+      howTab.classList.remove('active');
+      mapTab.classList.remove('active');
+      aboutTab.classList.remove('active');
+      homeSection.style.display = 'none';
+      howSection.style.display = 'none';
+      mapSection.style.display = 'none';
+      aboutSection.style.display = 'none';
+      if(tab === 'home') {
+        homeTab.classList.add('active');
+        homeSection.style.display = '';
+      } else if(tab === 'how') {
+        howTab.classList.add('active');
+        howSection.style.display = '';
+      } else if(tab === 'map') {
+        mapTab.classList.add('active');
+        mapSection.style.display = '';
+      } else if(tab === 'about') {
+        aboutTab.classList.add('active');
+        aboutSection.style.display = '';
+      }
+    }
+
+    homeTab.onclick = function(e) { e.preventDefault(); showTab('home'); };
+    howTab.onclick = function(e) { e.preventDefault(); showTab('how'); };
+    mapTab.onclick = function(e) { e.preventDefault(); showTab('map'); };
+    aboutTab.onclick = function(e) {
+      e.preventDefault();
+      window.location.href = "https://jebennett204.github.io/01-profile-card-html/";
+    };
+    howTabBtn.onclick = function(e) { e.preventDefault(); showTab('how'); };
+  </script>
 </body>
 </html>
