@@ -1,33 +1,49 @@
+<!--
+  Pet Fostering Website Assignment
+  - Created by Jake Bennett
+  - Date: May 26, 2025
+  - Simple, beginner-friendly HTML and CSS
+  - Uses only basic properties and semantic elements
+  - Well-commented for learning and easy maintenance
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Pet Fostering</title>
+  <!-- Link to the CSS file for styling -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Site header with the site name -->
   <header class="site-header">
     <h1>PetQuest</h1>
   </header>
 
-  <nav class="main-nav">
+  <!-- Navigation bar for switching between sections -->
+  <nav class="main-nav" aria-label="Main navigation">
     <a href="#home" id="homeTab" class="active">Home</a>
     <a href="#how-to-foster" id="howTab">How to Foster</a>
     <a href="#map" id="mapTab">Map</a>
     <a href="#about-me" id="aboutTab">About Me</a>
+    <a href="#contact" id="contactTab">Contact</a>
   </nav>
 
+  <!-- Home section with banner, pet photo, and info -->
   <section id="home-section">
+    <!-- Banner with welcome message -->
     <section class="banner">
-      <h1>Welcome to Pet Fostering</h1>
+      <h1>Welcome to PetQuest</h1>
       <p>Our mission is to help pets find loving temporary homes until they are adopted.</p>
     </section>
 
+    <!-- Colorful pet photo area -->
     <section class="pet-photo">
       <img src="img/2024-01-04_12-24-48_845.jpg" alt="A colorful cat representing a happy foster pet">
       <p>Every pet deserves a loving home!</p>
     </section>
 
+    <!-- Two columns: image and info about fostering -->
     <section class="info-columns">
       <section class="info-image">
         <img src="img/gato i perro .jpg" alt="A happy foster dog and cat">
@@ -38,6 +54,7 @@
       </section>
     </section>
 
+    <!-- Main content area with reasons and call to action -->
     <main>
       <section>
         <h2>Why Foster a Pet?</h2>
@@ -48,25 +65,37 @@
         <h2>How You Can Help</h2>
         <p>You can become a foster parent and make a big difference in a pet's life. It's easy to get started!</p>
         <p><strong>Ready to help?</strong></p>
-        <a href="#how-to-foster" class="cta-button" id="howTabBtn">Learn How to Foster</a>
+        <!-- Button to go to the How to Foster section -->
+        <a href="#how-to-foster-section" class="cta-button" id="howTabBtn">Learn How to Foster</a>
       </section>
     </main>
   </section>
 
-  <section id="how-to-foster-section">
+  <!-- How to Foster section with steps and a pet image -->
+  <section id="how-to-foster-section" style="display:none;">
     <h2>How to Foster a Pet (Step by Step)</h2>
-    <ol>
-      <li><strong>Contact a local shelter or rescue group.</strong> Ask about their fostering program and fill out an application.</li>
-      <li><strong>Prepare your home.</strong> Make a safe, comfortable space for your foster pet with food, water, and a cozy bed.</li>
-      <li><strong>Pick up your foster pet.</strong> Meet your new furry friend and bring them home.</li>
-      <li><strong>Care for your foster pet.</strong> Give them love, food, playtime, and any medicine they need. Help them feel safe and happy.</li>
-      <li><strong>Share updates.</strong> Take photos and share information with the shelter to help your foster pet get adopted.</li>
-      <li><strong>Help with adoption.</strong> Meet potential adopters and help your foster pet find their forever home!</li>
-    </ol>
-    <p class="howto-link">For more tips, visit <a href="https://www.wikihow.com/Foster-a-Dog-or-Cat" target="_blank" rel="noopener">this WikiHow guide</a>.</p>
+    <!-- Two columns: text on the left, image on the right -->
+    <section class="howto-columns" aria-label="How to Foster Example">
+      <section class="howto-text" style="float:left; width:60%;">
+        <ol>
+          <li><strong>Contact a local shelter or rescue group.</strong> Ask about their fostering program and fill out an application.</li>
+          <li><strong>Prepare your home.</strong> Make a safe, comfortable space for your foster pet with food, water, and a cozy bed.</li>
+          <li><strong>Pick up your foster pet.</strong> Meet your new furry friend and bring them home.</li>
+          <li><strong>Care for your foster pet.</strong> Give them love, food, playtime, and any medicine they need. Help them feel safe and happy.</li>
+          <li><strong>Share updates.</strong> Take photos and share information with the shelter to help your foster pet get adopted.</li>
+          <li><strong>Help with adoption.</strong> Meet potential adopters and help your foster pet find their forever home!</li>
+        </ol>
+        <p class="howto-link">For more tips, visit <a href="https://www.wikihow.com/Foster-a-Dog-or-Cat" target="_blank" rel="noopener">this WikiHow guide</a>.</p>
+      </section>
+      <section class="howto-image-area" style="float:right; width:38%; text-align:center;">
+        <img src="img/IMG_0971.jpeg" alt="A happy foster dog" style="display:block; margin-left:auto; margin-right:auto; width:90%; max-width:350px; border-radius:10px; margin-bottom:8px; border:none;">
+      </section>
+      <div style="clear:both;"></div>
+    </section>
   </section>
 
-  <section id="map-section" class="local-map">
+  <!-- Map section for finding adoption centers -->
+  <section id="map-section" class="local-map" style="display:none;">
     <h2>Find Pet Adoption Centers Near You</h2>
     <p>See where you can adopt or foster a pet in your area!</p>
     <iframe
@@ -75,77 +104,117 @@
       title="Pet Adoption Centers Near You"
     ></iframe>
     <p id="locationMessage"></p>
-    <script>
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var lat = position.coords.latitude;
-          var lon = position.coords.longitude;
-          var map = document.getElementById('adoptionMap');
-          map.src = 'https://www.google.com/maps?q=pet+adoption+near+' + lat + ',' + lon + '&output=embed';
-          document.getElementById('locationMessage').textContent = "Showing results near your current location.";
-        }, function() {
-          document.getElementById('locationMessage').textContent = "Location access denied. Showing general results.";
-        });
-      } else {
-        document.getElementById('locationMessage').textContent = "Geolocation is not supported by your browser. Showing general results.";
-      }
-    </script>
   </section>
 
-  <section id="about-me-section">
+  <!-- About Me section with a link to my profile card -->
+  <section id="about-me-section" style="display:none;">
     <h2>About Me</h2>
-    <p>Hello! I'm the creator of this pet fostering site. Learn more about me and see my profile card here:</p>
+    <p>Learn more about me and see my profile card here:</p>
     <p><a href="https://jebennett204.github.io/01-profile-card-html/" target="_blank" rel="noopener" class="profile-link">View My Profile Card</a></p>
   </section>
 
+  <!-- Contact section with a simple email form -->
+  <section id="contact-section" style="display:none;">
+    <h2>Contact</h2>
+    <form action="mailto:jakebennett@u.boisestate.edu" method="POST" enctype="text/plain" aria-label="Contact form">
+      <label for="contact-name">Name:</label><br>
+      <input type="text" id="contact-name" name="name" required aria-required="true"><br><br>
+      <label for="contact-email">Email:</label><br>
+      <input type="email" id="contact-email" name="email" required aria-required="true"><br><br>
+      <label for="contact-message">Message:</label><br>
+      <textarea id="contact-message" name="message" rows="5" required aria-required="true"></textarea><br><br>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer at the bottom of the page -->
   <footer>
     <p>&copy; 2025 Pet Fostering. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript for tab switching -->
   <script>
-    // Simple tab functionality for beginners
-    var homeTab = document.getElementById('homeTab');
-    var howTab = document.getElementById('howTab');
-    var mapTab = document.getElementById('mapTab');
-    var aboutTab = document.getElementById('aboutTab');
-    var homeSection = document.getElementById('home-section');
-    var howSection = document.getElementById('how-to-foster-section');
-    var mapSection = document.getElementById('map-section');
-    var aboutSection = document.getElementById('about-me-section');
-    var howTabBtn = document.getElementById('howTabBtn');
-
-    function showTab(tab) {
-      homeTab.classList.remove('active');
-      howTab.classList.remove('active');
-      mapTab.classList.remove('active');
-      aboutTab.classList.remove('active');
-      homeSection.style.display = 'none';
-      howSection.style.display = 'none';
-      mapSection.style.display = 'none';
-      aboutSection.style.display = 'none';
-      if(tab === 'home') {
-        homeTab.classList.add('active');
-        homeSection.style.display = '';
-      } else if(tab === 'how') {
-        howTab.classList.add('active');
-        howSection.style.display = '';
-      } else if(tab === 'map') {
-        mapTab.classList.add('active');
-        mapSection.style.display = '';
-      } else if(tab === 'about') {
-        aboutTab.classList.add('active');
-        aboutSection.style.display = '';
+    // Simple tab switching for beginners
+    window.onload = function() {
+      function showTab(tabId) {
+        // Hide all sections
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('how-to-foster-section').style.display = 'none';
+        document.getElementById('map-section').style.display = 'none';
+        document.getElementById('about-me-section').style.display = 'none';
+        document.getElementById('contact-section').style.display = 'none';
+        // Remove active from all nav links
+        document.getElementById('homeTab').classList.remove('active');
+        document.getElementById('howTab').classList.remove('active');
+        document.getElementById('mapTab').classList.remove('active');
+        document.getElementById('aboutTab').classList.remove('active');
+        document.getElementById('contactTab').classList.remove('active');
+        // Show the selected section and set nav active
+        if(tabId === 'home-section') {
+          document.getElementById('home-section').style.display = '';
+          document.getElementById('homeTab').classList.add('active');
+        } else if(tabId === 'how-to-foster-section') {
+          document.getElementById('how-to-foster-section').style.display = '';
+          document.getElementById('howTab').classList.add('active');
+        } else if(tabId === 'map-section') {
+          document.getElementById('map-section').style.display = '';
+          document.getElementById('mapTab').classList.add('active');
+          // Geolocation for map
+          var map = document.getElementById('adoptionMap');
+          var locMsg = document.getElementById('locationMessage');
+          if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var lat = position.coords.latitude;
+              var lon = position.coords.longitude;
+              map.src = 'https://www.google.com/maps?q=pet+adoption+near+' + lat + ',' + lon + '&output=embed';
+              if(locMsg) locMsg.textContent = "Showing results near your current location.";
+            }, function() {
+              if(locMsg) locMsg.textContent = "Location access denied. Showing general results.";
+            });
+          } else {
+            if(locMsg) locMsg.textContent = "Geolocation is not supported by your browser. Showing general results.";
+          }
+        } else if(tabId === 'about-me-section') {
+          document.getElementById('about-me-section').style.display = '';
+          document.getElementById('aboutTab').classList.add('active');
+        } else if(tabId === 'contact-section') {
+          document.getElementById('contact-section').style.display = '';
+          document.getElementById('contactTab').classList.add('active');
+        }
       }
-    }
 
-    homeTab.onclick = function(e) { e.preventDefault(); showTab('home'); };
-    howTab.onclick = function(e) { e.preventDefault(); showTab('how'); };
-    mapTab.onclick = function(e) { e.preventDefault(); showTab('map'); };
-    aboutTab.onclick = function(e) {
-      e.preventDefault();
-      window.location.href = "https://jebennett204.github.io/01-profile-card-html/";
+      // Nav button event listeners
+      document.getElementById('homeTab').onclick = function(e) {
+        e.preventDefault();
+        showTab('home-section');
+      };
+      document.getElementById('howTab').onclick = function(e) {
+        e.preventDefault();
+        showTab('how-to-foster-section');
+      };
+      document.getElementById('mapTab').onclick = function(e) {
+        e.preventDefault();
+        showTab('map-section');
+      };
+      document.getElementById('aboutTab').onclick = function(e) {
+        e.preventDefault();
+        showTab('about-me-section');
+      };
+      document.getElementById('contactTab').onclick = function(e) {
+        e.preventDefault();
+        showTab('contact-section');
+      };
+      // Learn How to Foster button
+      var howTabBtn = document.getElementById('howTabBtn');
+      if(howTabBtn) {
+        howTabBtn.onclick = function(e) {
+          e.preventDefault();
+          showTab('how-to-foster-section');
+        };
+      }
+      // Show home section by default
+      showTab('home-section');
     };
-    howTabBtn.onclick = function(e) { e.preventDefault(); showTab('how'); };
   </script>
 </body>
 </html>

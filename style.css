@@ -1,11 +1,11 @@
-/* Set a modern, easy-to-read font and background color for the whole page */
+/* Modern, clean, and colorful look for 2025, using only basic CSS */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #e6f7fa;
   color: #1a3a4f;
   margin: 0;
   padding: 0;
-  line-height: 1.7; /* Improve readability */
+  line-height: 1.7;
 }
 
 /* Style the main header section (not the site name) */
@@ -31,10 +31,9 @@ header p {
   background-color: #2196f3; /* Blue background to match banner */
   color: #fff; /* White text */
   text-align: center; /* Center the site name */
-  padding: 24px 0; /* More padding for modern look */
-  font-family: 'Segoe UI', Arial, sans-serif; /* Use the same modern font */
-  font-size: 1.7em; /* Slightly larger text */
-  letter-spacing: 1.5px; /* Add space between letters */
+  padding: 28px 0; /* More padding for modern look */
+  font-size: 2em; /* Slightly larger text */
+  letter-spacing: 2px; /* Add space between letters */
   margin-bottom: 0; /* Remove bottom margin */
   box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10); /* Subtle shadow */
 }
@@ -51,7 +50,7 @@ main {
   margin: 36px auto;
   padding: 24px;
   background-color: #ffffff; /* White background for content */
-  border-radius: 16px; /* Rounded corners */
+  border-radius: 18px; /* Rounded corners */
   box-shadow: 0 4px 16px rgba(33, 150, 243, 0.12);
 }
 
@@ -64,7 +63,7 @@ section {
 h2 {
   color: #0097a7; /* Teal color for headings */
   margin-top: 0; /* Remove top margin */
-  font-size: 1.6em;
+  font-size: 1.7em;
   letter-spacing: 1px;
 }
 
@@ -202,6 +201,9 @@ footer {
   .pet-photo img {
     max-width: 98%;
   }
+  .howto-image-area {
+    max-width: 98%;
+  }
 }
 
 /* Style for the local map section */
@@ -278,8 +280,7 @@ footer {
   width: 100%;
   background: #e3f2fd;
   text-align: center;
-  padding: 14px 0;
-  margin-bottom: 0;
+  padding: 16px 0;
   border-bottom: 2px solid #2196f3;
   box-shadow: 0 2px 8px rgba(33, 150, 243, 0.06);
 }
@@ -299,4 +300,115 @@ footer {
 .main-nav a.active, .main-nav a:hover {
   background: #2196f3;
   color: #fff;
+}
+
+/* Style for the howto-image-area class */
+.howto-image-area {
+  max-width: 340px;
+  margin: 18px auto 24px auto;
+  padding: 10px;
+  background: #fffbe7;
+  border: 2px dashed #2196f3;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.howto-image-area p {
+  color: #1a3a4f;
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Clear floats and contain columns */
+.howto-columns {
+  overflow: hidden;
+  margin-bottom: 24px;
+  /* Add padding to ensure spacing on both sides */
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.howto-text {
+  float: left;
+  width: 58%; /* Slightly less to allow for spacing */
+  margin-right: 2%; /* Add spacing between text and image */
+}
+
+.howto-image-area {
+  float: right;
+  width: 38%;
+  text-align: center;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.howto-image-area img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  border: none;
+}
+
+@media (max-width: 800px) {
+  .howto-text, .howto-image-area {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+  .howto-image-area img {
+    max-width: 98%;
+  }
+}
+
+/* Style the contact section */
+#contact-section {
+  max-width: 400px;
+  margin: 40px auto 36px auto;
+  padding: 24px 18px 18px 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.12);
+  text-align: center;
+}
+#contact-section h2 {
+  color: #0097a7;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+#contact-section form {
+  display: block;
+  margin: 0 auto;
+}
+#contact-section label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #1a3a4f;
+  text-align: left;
+}
+#contact-section input[type="text"],
+#contact-section input[type="email"],
+#contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #b3e5fc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  background: #f7fbfd;
+}
+#contact-section textarea {
+  resize: vertical;
+}
+#contact-section .cta-button {
+  width: 100%;
+  margin-top: 8px;
 }
